@@ -1,0 +1,30 @@
+$dark-grey: #4d4646;
+$light-grey: #5b5656;
+$mint: #7fcd91;
+$off-white: #f5eaea;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+}
+.main {
+  background-color: $dark-grey;
+  flex: 4;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar {
+  height: 100vh;
+  flex: 1;
+  background-color: $light-grey;
+}
