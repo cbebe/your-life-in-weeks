@@ -92,6 +92,9 @@ function processCommand(input) {
     case "help":
       handle.help();
       break;
+    case "bruh":
+      handle.appendLine("cbbsh: bruh");
+      break;
     default:
       handle.error(command);
   }
