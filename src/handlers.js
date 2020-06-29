@@ -1,5 +1,5 @@
 const terminal = document.getElementById("terminal");
-let bruh = false;
+let isBruh = false;
 
 export function help() {
   printMultiline([
@@ -37,16 +37,17 @@ export function clear() {
 }
 
 export function bruh() {
-  if (bruh)
+  if (isBruh)
     printMultiline([
       "cbbsh:",
       " _                _",
       "| |__  _ __ _   _| |__",
       "| '_ \\| '__| | | | '_ \\",
       "| |_) | |  | |_| | | | |",
-      "|_.__/|_|   __,_|_| |_|",
+      "|_.__/|_|   \\__,_|_| |_|",
     ]);
   else appendLine("cbbsh: bruh");
+  isBruh = !isBruh;
 }
 
 function printMultiline(message) {
