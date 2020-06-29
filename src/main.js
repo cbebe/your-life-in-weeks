@@ -58,7 +58,7 @@ function getInput(e) {
 function enterCommand() {
   const command = inputBox.value;
   history.push(command);
-  handle.appendLine(`${pwd.innerText} ${command}`);
+  handle.appendLine(`${pwd.innerText}${command}`);
   historyIndex = history.length - 1;
   processCommand(command);
 }

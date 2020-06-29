@@ -2,11 +2,11 @@ const terminal = document.getElementById("terminal");
 
 export function help() {
   [
-    "about - About me",
+    "about  - About me",
     "github - Go to my Github profile",
     "resume - Check out my resumé",
-    "clear - Clear the terminal screen",
-    "(add `--history` to clear this session's shell history)",
+    "clear  - Clear the terminal screen",
+    "  (add `--history` to clear this session's shell history)",
   ].forEach(line => appendLine(line));
 }
 
@@ -26,7 +26,7 @@ export function error(command) {
 }
 
 export function appendLine(line) {
-  const output = document.createElement("div");
+  const output = document.createElement("pre");
   output.innerHTML = line;
   output.classList.add("history");
   container.insertBefore(output, terminal);
