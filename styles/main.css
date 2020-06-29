@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Cascadia Code", "Consolas", monospace;
+  color: white;
+  font-size: 1rem;
+  background: black;
+  overflow: hidden;
+}
+
+#container {
+  height: 100vh;
+  margin: 10px;
+}
+
+#terminal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.fill {
+  color: black;
+}
+
+pre {
+  font-family: "Cascadia Code", "Consolas", monospace;
+  color: white;
+  font-size: 1rem;
+}
+
+#input-box {
+  font-family: "Cascadia Code", "Consolas", monospace;
+  color: white;
+  font-size: 1rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+/*# sourceMappingURL=main.css.map */

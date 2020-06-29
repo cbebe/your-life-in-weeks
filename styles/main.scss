@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin text {
+  font-family: "Cascadia Code", "Consolas", monospace;
+  color: white;
+  font-size: 1rem;
+}
+
+body {
+  @include text;
+  background: black;
+  overflow: hidden; // hide scrollbar
+}
+
+#container {
+  height: 100vh;
+  margin: 10px;
+}
+
+#terminal {
+  display: flex;
+}
+
+.fill {
+  color: black;
+}
+
+pre {
+  @include text;
+}
+
+#input-box {
+  @include text;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
