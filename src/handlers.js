@@ -1,3 +1,5 @@
+const terminal = document.getElementById("terminal");
+
 export function help() {
   console.log("help");
 }
@@ -15,4 +17,10 @@ export function appendLine(line) {
   output.innerHTML = line;
   output.classList.add("history");
   container.insertBefore(output, terminal);
+}
+
+export function clear() {
+  [].forEach.call(document.querySelectorAll(".history"), function (e) {
+    e.parentNode.removeChild(e);
+  });
 }
