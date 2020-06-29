@@ -1,11 +1,24 @@
 const terminal = document.getElementById("terminal");
 
 export function help() {
-  console.log("help");
+  [
+    "about - About me",
+    "github - Go to my Github profile",
+    "resume - Check out my resumé",
+    "clear - Clear the terminal screen",
+    "(add `--history` to clear this session's shell history)",
+  ].forEach(line => appendLine(line));
 }
 
 export function about() {
-  console.log("about");
+  [
+    "Hi! I'm Charles.",
+    "I'm a Computer Engineering student and a self-taught web developer.",
+    "Feel free to check out my projects on Github by typing `github`!",
+  ].forEach(line => appendLine(line));
+}
+export function site() {
+  appendLine("Full website coming soon ;)");
 }
 
 export function error(command) {

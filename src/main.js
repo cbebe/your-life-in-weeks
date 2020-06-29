@@ -5,6 +5,10 @@ const container = document.getElementById("container");
 const inputBox = document.getElementById("input-box");
 
 const history = [];
+
+// upcoming feature hehe
+const directory = [{ skills: 1 }, { education: 0 }];
+
 let historyIndex = -1;
 container.addEventListener("click", () => inputBox.focus());
 
@@ -20,7 +24,7 @@ function getInput(e) {
   switch (e.keyCode) {
     case TABKEY:
       e.preventDefault();
-      // handle autocompletion?
+      // handle autocompletion
       break;
     case ENTERKEY:
       enterCommand();
@@ -28,7 +32,7 @@ function getInput(e) {
       break;
     case ESCKEY:
       e.preventDefault();
-      // vi keybindings? lmao
+      // vi keybindings lmao
       break;
     case LKEY:
       if (e.ctrlKey) {
@@ -46,7 +50,7 @@ function getInput(e) {
       e.preventDefault();
       if (historyIndex >= history.length - 1) return;
       inputBox.value = history[++historyIndex];
-      historyIndex = Math.min(history.length - 1, historyIndex);
+      historyIndex = Math.min(history.length - 2, historyIndex);
       break;
   }
 }
@@ -59,9 +63,13 @@ function enterCommand() {
   processCommand(command);
 }
 
-function processCommand(command) {
-  const line = command.split(" ");
-  switch (line[0]) {
+function processCommand(input) {
+  const line = input.split(" ");
+  const command = line.shift();
+  switch (command) {
+    case "site":
+      handle.site();
+      break;
     case "about":
       handle.about();
       break;
@@ -72,16 +80,19 @@ function processCommand(command) {
       window.open("bruh.txt", "_blank");
       break;
     case "clear":
-      if (line.length === 1) handle.clear();
-      else if (line[1] === "history") {
+      if (line.length === 0) handle.clear();
+      else if (line[0] === "--history") {
         history.splice(0, history.length);
         historyIndex = -1;
+        handle.appendLine("Cleared input history");
+      } else {
+        handle.appendLine(`clear: unknown option: ${line}`);
       }
       break;
     case "help":
       handle.help();
       break;
     default:
-      handle.error(line[0]);
+      handle.error(command);
   }
 }
