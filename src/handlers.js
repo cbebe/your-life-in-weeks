@@ -17,9 +17,6 @@ export function about() {
     "Feel free to check out my projects on Github by typing `github`!",
   ].forEach(line => appendLine(line));
 }
-export function site() {
-  appendLine("Full website coming soon ;)");
-}
 
 export function error(command) {
   appendLine(`cbbsh: command not found: ${command}`);
@@ -28,12 +25,12 @@ export function error(command) {
 export function appendLine(line) {
   const output = document.createElement("pre");
   output.innerHTML = line;
-  output.classList.add("history");
+  output.classList.add("output");
   container.insertBefore(output, terminal);
 }
 
 export function clear() {
-  [].forEach.call(document.querySelectorAll(".history"), function (e) {
+  [].forEach.call(document.querySelectorAll(".output"), function (e) {
     e.parentNode.removeChild(e);
   });
 }

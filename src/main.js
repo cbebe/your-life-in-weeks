@@ -68,7 +68,7 @@ function processCommand(input) {
   const command = line.shift();
   switch (command) {
     case "site":
-      handle.site();
+      appendLine("Full website coming soon ;)");
       break;
     case "about":
       handle.about();
@@ -85,12 +85,15 @@ function processCommand(input) {
         history.splice(0, history.length);
         historyIndex = -1;
         handle.appendLine("Cleared input history");
-      } else {
-        handle.appendLine(`clear: unknown option: ${line}`);
-      }
+      } else handle.appendLine(`clear: unknown option: ${line}`);
+
       break;
     case "help":
       handle.help();
+      break;
+    case "ls":
+      break;
+    case "cd":
       break;
     case "bruh":
       handle.appendLine("cbbsh: bruh");
