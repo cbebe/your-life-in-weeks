@@ -15,20 +15,17 @@
 body {
   @include text;
   background: black;
-  overflow: hidden; // hide scrollbar
+  overflow: hidden;
 }
 
 #container {
+  width: 100vw;
   height: 100vh;
   margin: 10px;
 }
 
 #terminal {
   display: flex;
-}
-
-.fill {
-  color: black;
 }
 
 pre {
