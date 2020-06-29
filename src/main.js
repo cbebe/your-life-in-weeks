@@ -96,7 +96,7 @@ function processCommand(input) {
     case "cd":
       break;
     case "bruh":
-      handle.appendLine("cbbsh: bruh");
+      handle.bruh();
       break;
     default:
       handle.error(command);

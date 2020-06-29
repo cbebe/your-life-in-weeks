@@ -1,21 +1,22 @@
 const terminal = document.getElementById("terminal");
+let bruh = false;
 
 export function help() {
-  [
+  printMultiline([
     "about  - About me",
     "github - Go to my Github profile",
     "resume - Check out my resumé",
     "clear  - Clear the terminal screen",
     "  (add `--history` to clear this session's shell history)",
-  ].forEach(line => appendLine(line));
+  ]);
 }
 
 export function about() {
-  [
+  printMultiline([
     "Hi! I'm Charles.",
     "I'm a Computer Engineering student and a self-taught web developer.",
     "Feel free to check out my projects on Github by typing `github`!",
-  ].forEach(line => appendLine(line));
+  ]);
 }
 
 export function error(command) {
@@ -33,4 +34,21 @@ export function clear() {
   [].forEach.call(document.querySelectorAll(".output"), function (e) {
     e.parentNode.removeChild(e);
   });
+}
+
+export function bruh() {
+  if (bruh)
+    printMultiline([
+      "cbbsh:",
+      " _                _",
+      "| |__  _ __ _   _| |__",
+      "| '_ \\| '__| | | | '_ \\",
+      "| |_) | |  | |_| | | | |",
+      "|_.__/|_|   __,_|_| |_|",
+    ]);
+  else appendLine("cbbsh: bruh");
+}
+
+function printMultiline(message) {
+  message.forEach(line => appendLine(line));
 }
