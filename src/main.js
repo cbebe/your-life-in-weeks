@@ -7,6 +7,7 @@ const inputBox = document.getElementById("input-box");
 const history = [];
 
 let pwd = "~";
+let isBruh = false;
 
 let historyIndex = -1;
 
@@ -102,7 +103,7 @@ function processCommand(input) {
     case "cd":
       break;
     case "bruh":
-      handle.bruh();
+      handle.bruh(isBruh);
       break;
     default:
       handle.error(command);

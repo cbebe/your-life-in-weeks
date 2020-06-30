@@ -1,5 +1,4 @@
 const terminal = document.getElementById("terminal");
-let isBruh = false;
 
 export function help() {
   printMultiline([
@@ -36,7 +35,7 @@ export function clear() {
   });
 }
 
-export function bruh() {
+export function bruh(isBruh) {
   if (isBruh)
     printMultiline([
       "cbbsh:",
