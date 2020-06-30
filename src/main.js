@@ -105,7 +105,7 @@ function processCommand(input) {
       break;
     // MAJOR BUG: "bruh" doesn't work on mobile for no apparent reason >:(
     case "bruv":
-      if (isBruh)
+      if (isBruh) {
         handle.printMultiline([
           "cbbsh:",
           " _                _",
@@ -114,7 +114,9 @@ function processCommand(input) {
           "| |_) | |  | |_| | | | |",
           "|_.__/|_|   \\__,_|_| |_|",
         ]);
-      else handle.appendLine("cbbsh: bruh");
+      } else {
+        handle.appendLine("cbbsh: bruh");
+      }
       isBruh = !isBruh;
       break;
     default:
