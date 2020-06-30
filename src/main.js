@@ -79,6 +79,7 @@ function processCommand(input) {
       handle.about();
       break;
     case "github":
+      handle.appendLine("Opening Github...");
       window.open("https://github.com/cbebe", "_blank");
       break;
     case "resume":
