@@ -33,6 +33,7 @@ function specialControls(e) {
       // handle autocompletion
       break;
     case ENTERKEY:
+      e.preventDefault();
       enterCommand();
       inputBox.value = "";
       break;
@@ -102,7 +103,7 @@ function processCommand(input) {
       break;
     case "cd":
       break;
-    // MAJOR BUG: "bruh" doesn't work on mobile for no apparent reason
+    // MAJOR BUG: "bruh" doesn't work on mobile for no apparent reason >:(
     case "bruh":
       handle.bruh(isBruh);
       isBruh = !isBruh;
