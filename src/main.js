@@ -1,26 +1,31 @@
 import * as handle from "./handlers.js";
 
-const pwd = document.getElementById("pwd");
+const prompt = document.getElementById("prompt");
 const container = document.getElementById("container");
 const inputBox = document.getElementById("input-box");
 
 const history = [];
 
-// upcoming feature hehe
-const directory = [{ skills: 1 }, { education: 0 }];
+let pwd = "~";
 
 let historyIndex = -1;
+
 container.addEventListener("click", () => inputBox.focus());
 
-document.addEventListener("keydown", getInput, false);
+document.addEventListener("keydown", specialControls, false);
 
-function getInput(e) {
+function updatePrompt() {
+  prompt.innerText = `charles@cbebe:${pwd}$ `;
+}
+
+function specialControls(e) {
   const TABKEY = 9;
   const ENTERKEY = 13;
   const ESCKEY = 27;
   const LKEY = 76;
   const UPKEY = 38;
   const DOWNKEY = 40;
+
   switch (e.keyCode) {
     case TABKEY:
       e.preventDefault();
@@ -58,7 +63,7 @@ function getInput(e) {
 function enterCommand() {
   const command = inputBox.value;
   history.push(command);
-  handle.appendLine(`${pwd.innerText}${command}`);
+  handle.appendLine(`${prompt.innerText}${command}`);
   historyIndex = history.length - 1;
   processCommand(command);
 }
