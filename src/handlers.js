@@ -35,19 +35,6 @@ export function clear() {
   });
 }
 
-export function bruh(isBruh) {
-  if (isBruh)
-    printMultiline([
-      "cbbsh:",
-      " _                _",
-      "| |__  _ __ _   _| |__",
-      "| '_ \\| '__| | | | '_ \\",
-      "| |_) | |  | |_| | | | |",
-      "|_.__/|_|   \\__,_|_| |_|",
-    ]);
-  else appendLine("cbbsh: bruh");
-}
-
-function printMultiline(message) {
+export function printMultiline(message) {
   message.forEach(line => appendLine(line));
 }
