@@ -46,7 +46,6 @@ export function bruh(isBruh) {
       "|_.__/|_|   \\__,_|_| |_|",
     ]);
   else appendLine("cbbsh: bruh");
-  isBruh = !isBruh;
 }
 
 function printMultiline(message) {

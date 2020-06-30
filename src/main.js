@@ -104,6 +104,7 @@ function processCommand(input) {
       break;
     case "bruh":
       handle.bruh(isBruh);
+      isBruh = !isBruh;
       break;
     default:
       handle.error(command);
