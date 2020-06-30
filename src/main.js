@@ -104,6 +104,7 @@ function processCommand(input) {
     case "cd":
       break;
     // MAJOR BUG: "bruh" doesn't work on mobile for no apparent reason >:(
+    // Edit: resolved, but for some reason mobile doesn't like abstraction
     case "bruh":
       if (isBruh) {
         [
