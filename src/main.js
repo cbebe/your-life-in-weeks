@@ -102,6 +102,7 @@ function processCommand(input) {
       break;
     case "cd":
       break;
+    // MAJOR BUG: "bruh" doesn't work on mobile for no apparent reason
     case "bruh":
       handle.bruh(isBruh);
       isBruh = !isBruh;
