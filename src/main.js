@@ -104,16 +104,16 @@ function processCommand(input) {
     case "cd":
       break;
     // MAJOR BUG: "bruh" doesn't work on mobile for no apparent reason >:(
-    case "bruv":
+    case "bruh":
       if (isBruh) {
-        handle.printMultiline([
+        [
           "cbbsh:",
           " _                _",
           "| |__  _ __ _   _| |__",
           "| '_ \\| '__| | | | '_ \\",
           "| |_) | |  | |_| | | | |",
           "|_.__/|_|   \\__,_|_| |_|",
-        ]);
+        ].forEach(line => handle.appendLine(line));
       } else {
         handle.appendLine("cbbsh: bruh");
       }
