@@ -29,7 +29,7 @@ export function bruh(isBruh) {
       "| |_) | |  | |_| | | | |",
       "|_.__/|_|   \\__,_|_| |_|",
     ]);
-  else handle.appendLine("cbbsh: bruh");
+  else appendLine("cbbsh: bruh");
 }
 
 export function help() {
