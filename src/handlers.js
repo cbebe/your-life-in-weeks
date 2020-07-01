@@ -5,6 +5,7 @@ export function help() {
     "about  - About me",
     "github - Go to my Github profile",
     "resume - Check out my resumé",
+    "contact - Provides contact information",
     "clear  - Clear the terminal screen",
     "  (add `--history` to clear this session's shell history)",
   ]);

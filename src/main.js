@@ -75,13 +75,13 @@ function processCommand(input) {
   const command = line.shift();
   switch (command) {
     case "site":
-      appendLine("Full website coming soon ;)");
+      appendLine("cbbsh: Full website coming soon ;)");
       break;
     case "about":
       handle.about();
       break;
     case "github":
-      handle.appendLine("Opening Github...");
+      handle.appendLine("cbbsh: Opening Github...");
       window.open("https://github.com/cbebe", "_blank");
       break;
     case "resume":
@@ -92,7 +92,7 @@ function processCommand(input) {
       else if (line[0] === "--history") {
         history.splice(0, history.length);
         historyIndex = -1;
-        handle.appendLine("Cleared input history");
+        handle.appendLine("clear: Cleared input history");
       } else handle.appendLine(`clear: unknown option: ${line}`);
 
       break;
@@ -120,6 +120,10 @@ function processCommand(input) {
       }
       isBruh = !isBruh;
       break;
+    case "contact":
+      handle.appendLine(
+        "cbbsh: You can reach me through email at `cancheta@ualberta.ca`"
+      );
     default:
       handle.error(command);
   }
