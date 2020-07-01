@@ -10,7 +10,7 @@
 body {
   font-family: "Cascadia Code", "Consolas", monospace;
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
   background: black;
 }
 
@@ -29,7 +29,7 @@ body {
 pre {
   font-family: "Cascadia Code", "Consolas", monospace;
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
@@ -37,7 +37,7 @@ pre {
 #input-box {
   font-family: "Cascadia Code", "Consolas", monospace;
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
   background-color: transparent;
   outline: none;
   border: none;
