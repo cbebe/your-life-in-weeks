@@ -124,6 +124,7 @@ function processCommand(input) {
       handle.appendLine(
         "cbbsh: You can reach me through email at `cancheta@ualberta.ca`"
       );
+      break;
     default:
       handle.error(command);
   }
