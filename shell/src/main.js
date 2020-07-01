@@ -3,7 +3,6 @@ import * as handle from "./handlers.js";
 const prompt = document.getElementById("prompt");
 const container = document.getElementById("container");
 const inputBox = document.getElementById("input-box");
-const terminal = document.getElementById("terminal");
 
 const history = [];
 
@@ -81,9 +80,7 @@ function processCommand(input) {
   const command = line.shift();
   switch (command) {
     case "site":
-      handle.appendLine("cbbsh: Going to website... Bye bye!");
-      setTimeout(() => (window.location.href = "https://cbebe.xyz"), 1500);
-      terminal.style.display = "none";
+      handle.site();
       break;
     case "about":
       handle.about();
@@ -102,7 +99,6 @@ function processCommand(input) {
         historyIndex = -1;
         handle.appendLine("clear: Cleared input history");
       } else handle.appendLine(`clear: unknown option: ${line}`);
-
       break;
     case "help":
       handle.help();
@@ -114,18 +110,7 @@ function processCommand(input) {
     // MAJOR BUG: "bruh" doesn't work on mobile for no apparent reason >:(
     // Edit: resolved, but for some reason mobile doesn't like abstraction
     case "bruh":
-      if (isBruh) {
-        [
-          "cbbsh:",
-          " _                _",
-          "| |__  _ __ _   _| |__",
-          "| '_ \\| '__| | | | '_ \\",
-          "| |_) | |  | |_| | | | |",
-          "|_.__/|_|   \\__,_|_| |_|",
-        ].forEach(line => handle.appendLine(line));
-      } else {
-        handle.appendLine("cbbsh: bruh");
-      }
+      handle.bruh(isBruh);
       isBruh = !isBruh;
       break;
     case "contact":

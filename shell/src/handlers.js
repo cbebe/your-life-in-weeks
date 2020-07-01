@@ -13,6 +13,25 @@ export function appendLine(line) {
   container.insertBefore(output, getTerminal());
 }
 
+export function site() {
+  handle.appendLine("cbbsh: Going to website... Bye bye!");
+  setTimeout(() => (window.location.href = "https://cbebe.xyz"), 1500);
+  getTerminal().style.display = "none";
+}
+
+export function bruh(isBruh) {
+  if (isBruh)
+    printMultiline([
+      "cbbsh:",
+      " _                _",
+      "| |__  _ __ _   _| |__",
+      "| '_ \\| '__| | | | '_ \\",
+      "| |_) | |  | |_| | | | |",
+      "|_.__/|_|   \\__,_|_| |_|",
+    ]);
+  else handle.appendLine("cbbsh: bruh");
+}
+
 export function help() {
   printMultiline([
     "about  - About me",
