@@ -5,12 +5,14 @@ function getTerminal() {
 export function printMultiline(message) {
   message.forEach(line => appendLine(line));
 }
+
 export function appendLine(line) {
   const output = document.createElement("pre");
   output.innerHTML = line;
   output.classList.add("output");
   container.insertBefore(output, getTerminal());
 }
+
 export function help() {
   printMultiline([
     "about  - About me",
@@ -31,21 +33,12 @@ export function about() {
   ]);
 }
 
-export function site() {
-  appendLine("cbbsh: Going to website... Bye bye!");
-  setTimeout(() => (window.location.href = "https://cbebe.xyz"), 1500);
-  getTerminal().style.display = "none";
-}
 export function error(command) {
   appendLine(`cbbsh: command not found: ${command}`);
 }
-
-
 
 export function clear() {
   [].forEach.call(document.querySelectorAll(".output"), function (e) {
     e.parentNode.removeChild(e);
   });
 }
-
-

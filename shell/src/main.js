@@ -3,6 +3,7 @@ import * as handle from "./handlers.js";
 const prompt = document.getElementById("prompt");
 const container = document.getElementById("container");
 const inputBox = document.getElementById("input-box");
+const terminal = document.getElementById("terminal");
 
 const history = [];
 
@@ -80,7 +81,9 @@ function processCommand(input) {
   const command = line.shift();
   switch (command) {
     case "site":
-      handle.site();
+      handle.appendLine("cbbsh: Going to website... Bye bye!");
+      setTimeout(() => (window.location.href = "https://cbebe.xyz"), 1500);
+      terminal.style.display = "none";
       break;
     case "about":
       handle.about();
