@@ -2,15 +2,15 @@ function getTerminal() {
   return document.getElementById("terminal");
 }
 
-export function printMultiline(message) {
-  message.forEach(line => appendLine(line));
-}
-
 export function appendLine(line) {
   const output = document.createElement("pre");
   output.innerHTML = line;
   output.classList.add("output");
   container.insertBefore(output, getTerminal());
+}
+
+export function printMultiline(message) {
+  message.forEach(line => appendLine(line));
 }
 
 export function site() {
