@@ -75,14 +75,13 @@ function processCommand(input) {
   const command = line.shift();
   switch (command) {
     case "site":
-      handle.appendLine("cbbsh: Going to website... Bye bye!");
-      setTimeout(() => (window.location.href = "https://cbebe.xyz"), 1000);
+      handle.site();
       break;
     case "about":
       handle.about();
       break;
     case "github":
-      handle.appendLine("cbbsh: Opening Github...");
+      handle.appendLine("cbbsh: Opening Github in a new tab...");
       window.open("https://github.com/cbebe", "_blank");
       break;
     case "resume":

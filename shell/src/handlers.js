@@ -1,4 +1,6 @@
-const terminal = document.getElementById("terminal");
+function getTerminal() {
+  return document.getElementById("terminal");
+}
 
 export function help() {
   printMultiline([
@@ -20,6 +22,12 @@ export function about() {
   ]);
 }
 
+export function site() {
+  appendLine("cbbsh: Going to website... Bye bye!");
+  setTimeout(() => (window.location.href = "https://cbebe.xyz"), 2000);
+  console.log(getTerminal());
+  getTerminal().style.display = "none";
+}
 export function error(command) {
   appendLine(`cbbsh: command not found: ${command}`);
 }
@@ -28,7 +36,7 @@ export function appendLine(line) {
   const output = document.createElement("pre");
   output.innerHTML = line;
   output.classList.add("output");
-  container.insertBefore(output, terminal);
+  container.insertBefore(output, getTerminal());
 }
 
 export function clear() {
