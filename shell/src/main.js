@@ -71,6 +71,7 @@ function enterCommand() {
     historyIndex = history.length - 1;
     processCommand(command);
   }
+
   if (document.body.scrollHeight > document.body.clientHeight)
     window.scrollTo(0, document.body.scrollHeight);
 }
@@ -107,8 +108,6 @@ function processCommand(input) {
       break;
     case "cd":
       break;
-    // MAJOR BUG: "bruh" doesn't work on mobile for no apparent reason >:(
-    // Edit: resolved, but for some reason mobile doesn't like abstraction
     case "bruh":
       handle.bruh(isBruh);
       isBruh = !isBruh;
@@ -118,6 +117,9 @@ function processCommand(input) {
         "cbbsh: You can reach me through email at `cancheta@ualberta.ca`"
       );
       break;
+    case "history":
+      handle.appendLine("history: ");
+      handle.printMultiline(history);
     default:
       handle.error(command);
   }

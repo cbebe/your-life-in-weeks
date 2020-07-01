@@ -41,6 +41,7 @@ export function help() {
     "contact - Provides contact information",
     "clear  - Clear the terminal screen",
     "  (add `--history` to clear this session's shell history)",
+    "history - prints command history",
   ]);
 }
 
