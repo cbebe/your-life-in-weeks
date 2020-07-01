@@ -120,6 +120,7 @@ function processCommand(input) {
     case "history":
       handle.appendLine("history: ");
       handle.printMultiline(history);
+      break;
     default:
       handle.error(command);
   }
