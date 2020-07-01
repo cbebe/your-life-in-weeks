@@ -8,7 +8,6 @@ const history = [];
 
 let pwd = "~";
 let isBruh = false;
-
 let historyIndex = -1;
 
 container.addEventListener("click", () => inputBox.focus());
@@ -64,10 +63,12 @@ function specialControls(e) {
 
 function enterCommand() {
   const command = inputBox.value;
-  history.push(command);
   handle.appendLine(`${prompt.innerText}${command}`);
-  historyIndex = history.length - 1;
-  processCommand(command);
+  if (command !== "") {
+    history.push(command);
+    historyIndex = history.length - 1;
+    processCommand(command);
+  }
 }
 
 function processCommand(input) {
