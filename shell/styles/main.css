@@ -12,13 +12,12 @@ body {
   color: white;
   font-size: 1rem;
   background: black;
-  overflow: hidden;
 }
 
 #container {
+  padding: 10px;
   width: 100vw;
   height: 100vh;
-  margin: 10px;
 }
 
 #terminal {
@@ -31,6 +30,8 @@ pre {
   font-family: "Cascadia Code", "Consolas", monospace;
   color: white;
   font-size: 1rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 #input-box {

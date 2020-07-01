@@ -24,8 +24,7 @@ export function about() {
 
 export function site() {
   appendLine("cbbsh: Going to website... Bye bye!");
-  setTimeout(() => (window.location.href = "https://cbebe.xyz"), 2000);
-  console.log(getTerminal());
+  setTimeout(() => (window.location.href = "https://cbebe.xyz"), 1500);
   getTerminal().style.display = "none";
 }
 export function error(command) {

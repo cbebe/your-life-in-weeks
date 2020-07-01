@@ -49,12 +49,14 @@ function specialControls(e) {
     case UPKEY:
       e.preventDefault();
       if (historyIndex < 0) return;
+
       inputBox.value = history[historyIndex--];
       historyIndex = Math.max(0, historyIndex);
       break;
     case DOWNKEY:
       e.preventDefault();
       if (historyIndex >= history.length - 1) return;
+
       inputBox.value = history[++historyIndex];
       historyIndex = Math.min(history.length - 2, historyIndex);
       break;
@@ -69,6 +71,7 @@ function enterCommand() {
     historyIndex = history.length - 1;
     processCommand(command);
   }
+  window.scrollTo(0, document.body.scrollHeight);
 }
 
 function processCommand(input) {
