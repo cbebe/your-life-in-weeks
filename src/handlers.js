@@ -4,6 +4,7 @@ export function help() {
   printMultiline([
     "about  - About me",
     "github - Go to my Github profile",
+    "site - Go to main website",
     "resume - Check out my resumé",
     "contact - Provides contact information",
     "clear  - Clear the terminal screen",

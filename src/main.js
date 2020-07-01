@@ -75,7 +75,8 @@ function processCommand(input) {
   const command = line.shift();
   switch (command) {
     case "site":
-      appendLine("cbbsh: Full website coming soon ;)");
+      handle.appendLine("cbbsh: Going to website... Bye bye!");
+      setTimeout(() => (window.location.href = "https://cbebe.xyz"), 1000);
       break;
     case "about":
       handle.about();
