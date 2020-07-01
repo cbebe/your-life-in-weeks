@@ -67,9 +67,9 @@ function enterCommand() {
   const command = inputBox.value;
   handle.appendLine(`${prompt.innerText}${command}`);
   if (command !== "") {
+    processCommand(command);
     history.push(command);
     historyIndex = history.length - 1;
-    processCommand(command);
   }
 
   if (document.body.scrollHeight > document.body.clientHeight)
