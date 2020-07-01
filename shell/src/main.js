@@ -118,8 +118,10 @@ function processCommand(input) {
       );
       break;
     case "history":
-      handle.appendLine("history: ");
-      handle.printMultiline(history);
+      if (history.length) {
+        handle.appendLine("history: ");
+        handle.printMultiline(history);
+      } else handle.appendLine("history: No command history");
       break;
     default:
       handle.error(command);
