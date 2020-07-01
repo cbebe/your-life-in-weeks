@@ -2,6 +2,15 @@ function getTerminal() {
   return document.getElementById("terminal");
 }
 
+export function printMultiline(message) {
+  message.forEach(line => appendLine(line));
+}
+export function appendLine(line) {
+  const output = document.createElement("pre");
+  output.innerHTML = line;
+  output.classList.add("output");
+  container.insertBefore(output, getTerminal());
+}
 export function help() {
   printMultiline([
     "about  - About me",
@@ -31,12 +40,7 @@ export function error(command) {
   appendLine(`cbbsh: command not found: ${command}`);
 }
 
-export function appendLine(line) {
-  const output = document.createElement("pre");
-  output.innerHTML = line;
-  output.classList.add("output");
-  container.insertBefore(output, getTerminal());
-}
+
 
 export function clear() {
   [].forEach.call(document.querySelectorAll(".output"), function (e) {
@@ -44,6 +48,4 @@ export function clear() {
   });
 }
 
-export function printMultiline(message) {
-  message.forEach(line => appendLine(line));
-}
+
