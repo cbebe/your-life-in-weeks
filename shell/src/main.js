@@ -71,8 +71,8 @@ function enterCommand() {
     historyIndex = history.length - 1;
     processCommand(command);
   }
-
-  window.scrollTo(0, document.body.scrollHeight);
+  if (document.body.scrollHeight > document.body.clientHeight)
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
 function processCommand(input) {
