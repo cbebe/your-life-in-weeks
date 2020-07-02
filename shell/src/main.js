@@ -77,7 +77,11 @@ function enterCommand() {
 }
 
 function processCommand(input) {
-  const line = input.trim().split(" ");
+  const line = input
+    .trim()
+    .split(" ")
+    .filter(arg => arg !== "");
+
   const command = line.shift();
   switch (command) {
     case "site":
