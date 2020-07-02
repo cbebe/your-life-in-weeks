@@ -11,6 +11,7 @@ let isBruh = false;
 let historyIndex = -1;
 
 container.addEventListener("click", () => inputBox.focus());
+inputBox.focus();
 
 document.addEventListener("keydown", specialControls, false);
 
