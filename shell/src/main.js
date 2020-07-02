@@ -96,6 +96,7 @@ function processCommand(input) {
       window.open("https://github.com/cbebe", "_blank");
       break;
     case "resume":
+      handle.appendLine("cbbsh: Opening resumé in a new tab...");
       window.open("https://cbebe.xyz/Resume.pdf", "_blank");
       break;
     case "clear":
