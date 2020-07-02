@@ -95,7 +95,7 @@ function processCommand(input) {
       window.open("https://github.com/cbebe", "_blank");
       break;
     case "resume":
-      window.open("Resume.pdf", "_blank");
+      window.open("https://cbebe.xyz/Resume.pdf", "_blank");
       break;
     case "clear":
       if (line.length === 0) handle.clear();
