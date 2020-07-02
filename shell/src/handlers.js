@@ -14,7 +14,7 @@ export function printMultiline(message) {
 }
 
 export function site() {
-  handle.appendLine("cbbsh: Going to website... Bye bye!");
+  appendLine("cbbsh: Going to website... Bye bye!");
   setTimeout(() => (window.location.href = "https://cbebe.xyz"), 1500);
   getTerminal().style.display = "none";
 }
