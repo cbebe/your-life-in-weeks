@@ -66,7 +66,7 @@ function specialControls(e) {
 
 function enterCommand() {
   const command = inputBox.value;
-  handle.appendLine(`${prompt.innerText}${command}`);
+  handle.appendLine(`${prompt.innerHTML}${command}`);
   if (command !== "") {
     processCommand(command);
     history.push(command);

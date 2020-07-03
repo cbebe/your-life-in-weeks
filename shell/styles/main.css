@@ -34,6 +34,14 @@ pre {
   word-wrap: break-word;
 }
 
+.green {
+  color: limegreen;
+}
+
+.blue {
+  color: #189ad3;
+}
+
 #input-box {
   font-family: "Cascadia Code", "Consolas", monospace;
   color: white;

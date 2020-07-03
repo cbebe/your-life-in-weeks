@@ -33,6 +33,14 @@ pre {
   word-wrap: break-word;
 }
 
+.green {
+  color: limegreen;
+}
+
+.blue {
+  color: #189ad3;
+}
+
 #input-box {
   @include text;
   background-color: transparent;

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="icon" href="favicon.ico" />
     <title>Charles's shell</title>
-    <script src="src/main.js?v=3" defer type="module"></script>
+    <script src="src/main.js" defer type="module"></script>
   </head>
   <body>
     <div id="container">
@@ -27,7 +27,9 @@ Type `help` + ENTER to see a list of commands.</pre
         >
       </div>
       <div id="terminal">
-        <pre id="prompt">charles@cbebe:~$ </pre>
+        <pre
+          id="prompt"
+        ><span class="green">charles@cbebe</span>:<span class="blue">~</span>$ </pre>
         <input name="" id="input-box" spellcheck="false" />
       </div>
     </div>

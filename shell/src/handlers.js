@@ -2,10 +2,15 @@ function getTerminal() {
   return document.getElementById("terminal");
 }
 
+function createElementWithClass(text, type, className) {
+  const el = document.createElement(type);
+  el.innerHTML = text;
+  el.classList.add(className);
+  return el;
+}
+
 export function appendLine(line) {
-  const output = document.createElement("pre");
-  output.innerHTML = line;
-  output.classList.add("output");
+  const output = createElementWithClass(line, "pre", "output");
   container.insertBefore(output, getTerminal());
 }
 
