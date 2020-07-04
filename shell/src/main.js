@@ -98,5 +98,5 @@ function processCommand(input) {
     entries => entries[0] === command && !entries[1].noUse
   );
   if (commandToExecute) commandToExecute[1].fn(state, args);
-  else commands.error(command);
+  else commands.error.fn(command);
 }
