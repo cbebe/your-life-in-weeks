@@ -4,8 +4,6 @@ const prompt = document.getElementById("prompt");
 const container = document.getElementById("container");
 const inputBox = document.getElementById("input-box");
 
-const history = [];
-
 let state = {
   history: [],
   pwd: "~",
@@ -50,7 +48,7 @@ function specialControls(e) {
       break;
     case UPKEY:
       e.preventDefault();
-      if (historyIndex < 0) return;
+      if (state.historyIndex < 0) return;
 
       inputBox.value = state.history[state.historyIndex--];
       state.historyIndex = Math.max(0, state.historyIndex);
@@ -81,8 +79,6 @@ function enterCommand() {
     window.scrollTo(0, document.body.scrollHeight);
 }
 
-// lmao what is this trash
-// what open closed principle amirite
 function processCommand(input) {
   const args = input
     .trim()
@@ -94,9 +90,10 @@ function processCommand(input) {
   // printHelp needs the commands object itself
   if (command === "help") return commands.printHelp.fn(commands);
 
-  const [commandToExecute] = Object.entries(commands).filter(
+  const commandToExecute = Object.entries(commands).find(
     entries => entries[0] === command && !entries[1].noUse
   );
+
   if (commandToExecute) commandToExecute[1].fn(state, args);
   else commands.error.fn(command);
 }
