@@ -19,6 +19,10 @@ const appendLine = {
   },
 };
 
+function unknownOptions(command, args) {
+  appendLine.fn(`${command}: unknown option:${args.map(arg => ` ${arg}`)}`);
+}
+
 const printMultiline = {
   description: "Prints multiple lines on the terminal",
   noUse: true,
@@ -51,6 +55,14 @@ const bruh = {
   description: "bruh",
   visible: false,
   fn: (state, args) => {
+    if (args.length !== 0) {
+      if (args[0] === "moment") {
+        appendLine.fn("cbbsh: bruh moment");
+        window.open("https://www.youtube.com/watch?v=1F6vJzX6LdA", "_blank");
+      } else unknownOptions("bruh", args);
+
+      return;
+    }
     if (state.isBruh)
       printMultiline.fn([
         "cbbsh:",
@@ -177,8 +189,8 @@ const clear = {
     else if (args[0] === "--history") {
       state.history.splice(0, state.history.length);
       state.historyIndex = -1;
-      commands.appendLine.fn("clear: Cleared input history");
-    } else commands.appendLine.fn(`clear: unknown option: ${args}`);
+      appendLine.fn("clear: Cleared input history");
+    } else unknownOptions("clear", args);
   },
 };
 
