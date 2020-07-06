@@ -1,6 +1,6 @@
 # cbebe.xyz
 
-[](https://cbebe.xyz/cbebe.xyz.png)
+![cbebe.xyz logo](https://cbebe.xyz/cbebe.xyz.png)
 
 My portfolio website using command-line interface
 
