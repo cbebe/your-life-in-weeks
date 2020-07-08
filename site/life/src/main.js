@@ -3,9 +3,10 @@ const dateInput = document.getElementById("birth");
 const weekStatement = document.getElementById("weeks");
 const dobForm = document.getElementById("date-of-birth");
 
-const WEEKS_IN_MS = 1000 * 3600 * 24 * 7;
-const NUMBER_OF_WEEKS = 52 * 80;
-const LIFESPAN = WEEKS_IN_MS * NUMBER_OF_WEEKS;
+const WEEK_IN_MS = 1000 * 3600 * 24 * 7;
+const YEARS = 80;
+const NUMBER_OF_WEEKS = 52 * YEARS;
+const LIFESPAN = WEEK_IN_MS * NUMBER_OF_WEEKS;
 
 let birth;
 let pastWeeksLived;
@@ -19,15 +20,16 @@ function update() {
 
   birth = new Date(dateInput.value);
   console.log(birth);
-  weeksLived = Math.floor((today - birth) / WEEKS_IN_MS);
+  weeksLived = Math.floor((today - birth) / WEEK_IN_MS);
   updateWeekStatement(weeksLived);
   unhighlightCells(grid, 0, pastWeeksLived);
   highlightCells(grid, 0, weeksLived);
 }
 
 function updateWeekStatement(weeks) {
-  const uOld = weeks === 4160 ? ", and you're still going. Congrats!" : ".";
-  weekStatement.innerHTML = `So far, you have lived ${weeks} out of 4160 weeks${uOld}`;
+  const uOld =
+    weeks === NUMBER_OF_WEEKS ? ", and you're still going. Congrats!" : ".";
+  weekStatement.innerHTML = `So far, you have lived ${weeks} out of ${NUMBER_OF_WEEKS} weeks${uOld}`;
 }
 
 function init() {
@@ -44,7 +46,6 @@ function init() {
     update();
   });
 
-  // remember zero-indexing (September = 8)
   update();
 }
 
