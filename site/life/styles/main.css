@@ -17,14 +17,14 @@
 #grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1.5vw)[52];
-      grid-template-columns: repeat(52, 1.5vw);
+  -ms-grid-columns: (1.8vw)[52];
+      grid-template-columns: repeat(52, 1.8vw);
 }
 
 .cell {
   width: 1.2vw;
   height: 1.2vw;
   border: 1px solid black;
-  margin: 0.1vw;
+  margin: 0.2vw;
 }
 /*# sourceMappingURL=main.css.map */
