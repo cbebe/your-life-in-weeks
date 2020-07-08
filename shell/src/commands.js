@@ -194,6 +194,14 @@ const clear = {
   },
 };
 
+const life = {
+  description: "Shows your life in terms of weeks",
+  visible: false,
+  fn: () => {
+    window.location.href = "https://cbebe.xyz/life/";
+  },
+};
+
 const commands = {
   about,
   cd,
@@ -210,6 +218,7 @@ const commands = {
   resume,
   history,
   contact,
+  life,
 };
 
 export default commands;
