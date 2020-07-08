@@ -21,11 +21,13 @@ function update() {
   console.log(birth);
   weeksLived = Math.floor((today - birth) / WEEKS_IN_MS);
   updateWeekStatement(weeksLived);
+  unhighlightCells(grid, 0, pastWeeksLived);
   highlightCells(grid, 0, weeksLived);
 }
 
 function updateWeekStatement(weeks) {
-  weekStatement.innerHTML = `So far, you have lived ${weeks} out of 4160 weeks.`;
+  const uOld = weeks === 4160 ? ", and you're still going. Congrats!" : ".";
+  weekStatement.innerHTML = `So far, you have lived ${weeks} out of 4160 weeks${uOld}`;
 }
 
 function init() {
