@@ -1,5 +1,7 @@
 $cell-width: 1.2vw;
 $cell-margin: 0.2vw;
+$b-lightness: 50;
+$border-color: rgba($b-lightness, $b-lightness, $b-lightness, 0.5);
 
 #root {
   display: flex;
@@ -16,6 +18,10 @@ $cell-margin: 0.2vw;
 .cell {
   width: $cell-width;
   height: $cell-width;
-  border: 1px solid black;
+  border: 1px solid $border-color;
   margin: $cell-margin;
+}
+
+.past {
+  background-color: rgba(200, 50, 50, 0.5);
 }

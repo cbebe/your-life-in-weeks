@@ -9,7 +9,19 @@
   </head>
   <body>
     <div id="root">
-      <h1>Your life in weeks assuming you live up to 80 years old</h1>
+      <h1>Your life in weeks assuming you will live up to 80 years old</h1>
+      <form id="date-of-birth">
+        <label for="birth">Date of birth:</label>
+        <input
+          type="date"
+          value="2000-09-12"
+          id="birth"
+          required
+          pattern="\d{4}-\d{2}-\d{2}"
+        />
+        <input type="submit" value="Change DOB" />
+      </form>
+      <h2 id="weeks"></h2>
       <div id="grid"></div>
     </div>
   </body>
