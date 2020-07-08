@@ -1,0 +1,30 @@
+#root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1.5vw)[52];
+      grid-template-columns: repeat(52, 1.5vw);
+}
+
+.cell {
+  width: 1.2vw;
+  height: 1.2vw;
+  border: 1px solid black;
+  margin: 0.1vw;
+}
+/*# sourceMappingURL=main.css.map */

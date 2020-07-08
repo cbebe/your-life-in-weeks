@@ -1,0 +1,21 @@
+$cell-width: 1.2vw;
+$cell-margin: 0.1vw;
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(52, $cell-width + $cell-margin * 3);
+}
+
+.cell {
+  width: $cell-width;
+  height: $cell-width;
+  border: 1px solid black;
+  margin: $cell-margin;
+}
