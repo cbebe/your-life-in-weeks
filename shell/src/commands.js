@@ -202,6 +202,15 @@ const life = {
   },
 };
 
+const car = {
+  description: "Be scared",
+  visible: false,
+  fn: () => {
+    window.location.href =
+      "https://www.youtube.com/watch?v=GMgsFZ4rkEI&feature=youtu.be&fbclid=IwAR2RH4AldKmuwN2X7Dbb-vLdqg_-z2m6aGJ8TFxb_i1qa6YtWjJSu1Jftbc";
+  },
+};
+
 const commands = {
   about,
   cd,
@@ -219,6 +228,7 @@ const commands = {
   history,
   contact,
   life,
+  car,
 };
 
 export default commands;
