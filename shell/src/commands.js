@@ -1,10 +1,10 @@
 import * as link from "./links.js";
 import * as display from "./display.js";
 
+const { appendLine, printMultiline, clearTerminal } = display;
+
 function unknownOptions(command, args) {
-  display.appendLine.fn(
-    `${command}: unknown option:${args.map(arg => ` ${arg}`)}`
-  );
+  appendLine.fn(`${command}: unknown option:${args.map(arg => ` ${arg}`)}`);
 }
 
 const bruh = {
@@ -13,14 +13,14 @@ const bruh = {
   fn: (state, args) => {
     if (args.length !== 0) {
       if (args[0] === "moment") {
-        display.appendLine.fn("cbbsh: bruh moment");
+        appendLine.fn("cbbsh: bruh moment");
         link.bruhMoment();
       } else unknownOptions("bruh", args);
 
       return;
     }
     if (state.isBruh)
-      display.printMultiline.fn([
+      printMultiline.fn([
         "cbbsh:",
         " _                _",
         "| |__  _ __ _   _| |__",
@@ -28,7 +28,7 @@ const bruh = {
         "| |_) | |  | |_| | | | |",
         "|_.__/|_|   \\__,_|_| |_|",
       ]);
-    else display.appendLine.fn("cbbsh: bruh");
+    else appendLine.fn("cbbsh: bruh");
     state.isBruh = !state.isBruh;
   },
 };
@@ -37,7 +37,7 @@ const about = {
   description: "About me",
   visible: true,
   fn: () => {
-    display.printMultiline.fn([
+    printMultiline.fn([
       "Hi! I'm Charles.",
       "I'm a Computer Engineering student and a self-taught web developer.",
       "Feel free to check out my projects on Github by typing `github`!",
@@ -49,14 +49,14 @@ const error = {
   description: "Print error message",
   noUse: true,
   visible: false,
-  fn: command => display.appendLine.fn(`cbbsh: command not found: ${command}`),
+  fn: command => appendLine.fn(`cbbsh: command not found: ${command}`),
 };
 
 const intro = {
   description: "reprint the intro",
   visible: true,
   fn: () => {
-    display.printMultiline.fn([
+    printMultiline.fn([
       "      _          _",
       "  ___| |__   ___| |__   ___  __  ___   _ ____",
       " / __| '_ \\ / _ \\ '_ \\ / _ \\ \\ \\/ / | | |_  /",
@@ -74,7 +74,7 @@ const cd = {
   description: "Change directory",
   visible: false,
   fn: (state, args) => {
-    if (args.length > 1) display.appendLine.fn("cbbsh: cd: too many arguments");
+    if (args.length > 1) appendLine.fn("cbbsh: cd: too many arguments");
     else {
       const dir = args[0];
       const pwd = document.querySelector("#prompt > span.blue");
@@ -88,7 +88,7 @@ const contact = {
   description: "Show contact information",
   visible: true,
   fn: () =>
-    display.appendLine.fn(
+    appendLine.fn(
       "cbbsh: You can reach me through email at `cancheta@ualberta.ca`"
     ),
 };
@@ -98,9 +98,9 @@ const history = {
   visible: true,
   fn: state => {
     if (state.history.length) {
-      display.appendLine.fn("history: ");
-      display.printMultiline.fn(history);
-    } else display.appendLine.fn("history: No command history");
+      appendLine.fn("history: ");
+      printMultiline.fn(history);
+    } else appendLine.fn("history: No command history");
   },
 };
 
@@ -108,11 +108,11 @@ const clear = {
   description: "Clears terminal screen / command history (--history)",
   visible: true,
   fn: (state, args) => {
-    if (args.length === 0) display.clearTerminal.fn();
+    if (args.length === 0) clearTerminal.fn();
     else if (args[0] === "--history") {
       state.history.splice(0, state.history.length);
       state.historyIndex = -1;
-      display.appendLine.fn("clear: Cleared input history");
+      appendLine.fn("clear: Cleared input history");
     } else unknownOptions("clear", args);
   },
 };
