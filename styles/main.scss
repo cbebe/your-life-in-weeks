@@ -1,8 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 $cell-width: 1.2vw;
 $cell-margin: 0.2vw;
 $b-lightness: 50;
 $border-color: rgba($b-lightness, $b-lightness, $b-lightness, 0.5);
 
+body {
+  font-family: "PT Sans", sans-serif;
+}
 #root {
   display: flex;
   flex-direction: column;
@@ -24,16 +29,9 @@ $border-color: rgba($b-lightness, $b-lightness, $b-lightness, 0.5);
 
 .past {
   background-color: rgba(200, 50, 50, 0.5);
+  transition: transform 200ms;
   &:hover {
-    animation-name: pop;
-    animation-duration: 100ms;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-  }
-}
-
-@keyframes pop {
-  100% {
     transform: scale(1.5);
+    transition: transform 200ms;
   }
 }

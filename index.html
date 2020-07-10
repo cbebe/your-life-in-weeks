@@ -9,9 +9,9 @@
   </head>
   <body>
     <div id="root">
-      <header>
+      <main>
         <h1>Your life in weeks assuming you will live up to 80 years old</h1>
-      </header>
+      </main>
       <form id="date-of-birth">
         <label for="birth">Date of birth:</label>
         <input
@@ -26,7 +26,12 @@
       <section>
         <h2 id="weeks"></h2>
       </section>
-      <main id="grid"></main>
+      <div>
+        <p>One cell: 1 week / 7 days</p>
+        <p>One row: 1 year / 52 weeks</p>
+        <p>One grid: 1 lifetime / 80 years*</p>
+      </div>
+      <div id="grid"></div>
     </div>
   </body>
 </html>

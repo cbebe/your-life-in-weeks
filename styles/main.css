@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+body {
+  font-family: "PT Sans", sans-serif;
+}
+
 #root {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,30 +35,18 @@
 
 .past {
   background-color: rgba(200, 50, 50, 0.5);
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
 }
 
 .past:hover {
-  -webkit-animation-name: pop;
-          animation-name: pop;
-  -webkit-animation-duration: 100ms;
-          animation-duration: 100ms;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes pop {
-  100% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
-}
-
-@keyframes pop {
-  100% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
 }
 /*# sourceMappingURL=main.css.map */
