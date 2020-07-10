@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Life in Weeks</title>
     <link rel="stylesheet" href="styles/main.css" />
-    <script src="src/main.js" defer></script>
+    <script src="src/main.min.js" defer></script>
   </head>
   <body>
     <div id="root">
-      <h1>Your life in weeks assuming you will live up to 80 years old</h1>
+      <header>
+        <h1>Your life in weeks assuming you will live up to 80 years old</h1>
+      </header>
       <form id="date-of-birth">
         <label for="birth">Date of birth:</label>
         <input
@@ -21,8 +23,10 @@
         />
         <input type="submit" value="Change DOB" />
       </form>
-      <h2 id="weeks"></h2>
-      <div id="grid"></div>
+      <section>
+        <h2 id="weeks"></h2>
+      </section>
+      <main id="grid"></main>
     </div>
   </body>
 </html>
