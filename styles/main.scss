@@ -24,4 +24,16 @@ $border-color: rgba($b-lightness, $b-lightness, $b-lightness, 0.5);
 
 .past {
   background-color: rgba(200, 50, 50, 0.5);
+  &:hover {
+    animation-name: pop;
+    animation-duration: 100ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes pop {
+  100% {
+    transform: scale(1.5);
+  }
 }
